@@ -1,3 +1,7 @@
+# MEDIMO
+Run `pnpm run build`
+Daarna `pnpm run build-dts` voor de TS definitions
+
 # vuejs/core [![npm](https://img.shields.io/npm/v/vue.svg)](https://www.npmjs.com/package/vue) [![build status](https://github.com/vuejs/core/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/vuejs/core/actions/workflows/ci.yml)
 
 ## Getting Started
