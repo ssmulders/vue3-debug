@@ -7,7 +7,7 @@ import * as runtimeDom from '@vue/runtime-dom'
 import { isString, NOOP, generateCodeFrame, extend } from '@vue/shared'
 import { InternalRenderFunction } from 'packages/runtime-core/src/component'
 
-if (__DEV__) {
+if (__DEV__ || __WARN__) {
   initDev()
 }
 
@@ -47,8 +47,8 @@ function compileToFunction(
   const opts = extend(
     {
       hoistStatic: true,
-      onError: __DEV__ ? onError : undefined,
-      onWarn: __DEV__ ? e => onError(e, true) : NOOP
+      onError: __DEV__ || __WARN__ ? onError : undefined,
+      onWarn: __DEV__ || __WARN__ ? e => onError(e, true) : NOOP
     } as CompilerOptions,
     options
   )

@@ -387,7 +387,7 @@ export const PublicInstanceProxyHandlers: ProxyHandler<any> = {
         return globalProperties[key]
       }
     } else if (
-      __DEV__ &&
+      (__DEV__ || __WARN__) &&
       currentRenderingInstance &&
       (!isString(key) ||
         // #1091 avoid internal isRef/isVNode checks on component instance leading

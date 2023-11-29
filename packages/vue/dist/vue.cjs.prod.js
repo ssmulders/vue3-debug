@@ -40,8 +40,8 @@ function compileToFunction(template, options) {
   const opts = shared.extend(
     {
       hoistStatic: true,
-      onError: void 0,
-      onWarn: shared.NOOP
+      onError: onError ,
+      onWarn: (e) => onError(e, true) 
     },
     options
   );
@@ -49,6 +49,16 @@ function compileToFunction(template, options) {
     opts.isCustomElement = (tag) => !!customElements.get(tag);
   }
   const { code } = compilerDom.compile(template, opts);
+  function onError(err, asWarning = false) {
+    const message = asWarning ? err.message : `Template compilation error: ${err.message}`;
+    const codeFrame = err.loc && shared.generateCodeFrame(
+      template,
+      err.loc.start.offset,
+      err.loc.end.offset
+    );
+    runtimeDom.warn(codeFrame ? `${message}
+${codeFrame}` : message);
+  }
   const render = new Function("Vue", code)(runtimeDom__namespace);
   render._rc = true;
   return compileCache[key] = render;

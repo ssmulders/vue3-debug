@@ -254,7 +254,7 @@ var Vue = (function (exports) {
   };
 
   function warn$1(msg, ...args) {
-    console.warn(`[Vue warn] ${msg}`, ...args);
+    console.warn(`[Medimo Vue Warn] ${msg}`, ...args);
   }
 
   let activeEffectScope;
@@ -1429,7 +1429,7 @@ var Vue = (function (exports) {
         ]
       );
     } else {
-      const warnArgs = [`[Vue warn]: ${msg}`, ...args];
+      const warnArgs = [`[Medimo Vue Warn]: ${msg}`, ...args];
       if (trace.length && // avoid spamming console during tests
       true) {
         warnArgs.push(`
@@ -1573,7 +1573,6 @@ var Vue = (function (exports) {
     return values;
   }
   function handleError(err, instance, type, throwInDev = true) {
-    console.error("STAN REMOVE LATER! Inside the error handler");
     const contextVNode = instance ? instance.vnode : null;
     if (instance) {
       let cur = instance.parent;
@@ -10548,6 +10547,9 @@ Component that was made reactive: `,
       {
         console.info(
           `You are running a development build of Vue.
+__WARN__ and __DEV__ are 
+` + true + `
+` + true + `
 Make sure to use the production build (*.prod.js) when deploying for production.`
         );
       }

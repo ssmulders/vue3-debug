@@ -54,8 +54,8 @@ function compileToFunction(
       {
         hoistStatic: true,
         whitespace: 'preserve',
-        onError: __DEV__ ? onError : undefined,
-        onWarn: __DEV__ ? e => onError(e, true) : NOOP
+        onError: __DEV__ || __WARN__ ? onError : undefined,
+        onWarn: __DEV__ || __WARN__ ? e => onError(e, true) : NOOP
       } as CompilerOptions,
       options
     )

@@ -14,7 +14,7 @@ export function defaultOnError(error: CompilerError) {
 }
 
 export function defaultOnWarn(msg: CompilerError) {
-  __DEV__ && console.warn(`[Vue warn] ${msg.message}`)
+  __DEV__ && console.warn(`[Medimo Vue Error] ${msg.message}`)
 }
 
 type InferCompilerError<T> = T extends ErrorCodes

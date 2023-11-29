@@ -1,4 +1,4 @@
-# vue
+# Vue - MEDIMO EDIT
 
 ## Which dist file to use?
 
@@ -52,3 +52,4 @@ Note: the replacement value **must be boolean literals** and cannot be strings, 
   - For use in Node.js server-side rendering via `require()`.
   - If you bundle your app with webpack with `target: 'node'` and properly externalize `vue`, this is the build that will be loaded.
   - The dev/prod files are pre-built, but the appropriate file is automatically required based on `process.env.NODE_ENV`.
+# vue3-production-debug-dists

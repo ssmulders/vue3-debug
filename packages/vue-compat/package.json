@@ -43,6 +43,6 @@
     "source-map-js": "^1.0.2"
   },
   "peerDependencies": {
-    "vue": "3.3.8"
+    "vue": "git+ssh://git@github.com:ssmulders/vue3-production-debug-dists.git#v3.3.8"
   }
 }

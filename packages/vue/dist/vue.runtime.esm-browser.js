@@ -251,7 +251,7 @@ const replacer = (_key, val) => {
 };
 
 function warn$1(msg, ...args) {
-  console.warn(`[Vue warn] ${msg}`, ...args);
+  console.warn(`[Medimo Vue Warn] ${msg}`, ...args);
 }
 
 let activeEffectScope;
@@ -1426,7 +1426,7 @@ function warn(msg, ...args) {
       ]
     );
   } else {
-    const warnArgs = [`[Vue warn]: ${msg}`, ...args];
+    const warnArgs = [`[Medimo Vue Warn]: ${msg}`, ...args];
     if (trace.length && // avoid spamming console during tests
     true) {
       warnArgs.push(`
@@ -1570,7 +1570,6 @@ function callWithAsyncErrorHandling(fn, instance, type, args) {
   return values;
 }
 function handleError(err, instance, type, throwInDev = true) {
-  console.error("STAN REMOVE LATER! Inside the error handler");
   const contextVNode = instance ? instance.vnode : null;
   if (instance) {
     let cur = instance.parent;
@@ -10563,6 +10562,9 @@ function initDev() {
     {
       console.info(
         `You are running a development build of Vue.
+__WARN__ and __DEV__ are 
+` + true + `
+` + true + `
 Make sure to use the production build (*.prod.js) when deploying for production.`
       );
     }

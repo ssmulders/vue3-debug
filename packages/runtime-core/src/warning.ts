@@ -31,7 +31,7 @@ export function popWarningContext() {
 }
 
 export function warn(msg: string, ...args: any[]) {
-  if (!__DEV__) return
+  if (!__DEV__ && !__WARN__) return
 
   // avoid props formatting or warn handler tracking deps that might be mutated
   // during patch, leading to infinite recursion.
@@ -58,7 +58,7 @@ export function warn(msg: string, ...args: any[]) {
       ]
     )
   } else {
-    const warnArgs = [`[Vue warn]: ${msg}`, ...args]
+    const warnArgs = [`[Medimo Vue Warn]: ${msg}`, ...args]
     /* istanbul ignore if */
     if (
       trace.length &&

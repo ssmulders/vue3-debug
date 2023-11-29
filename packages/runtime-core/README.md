@@ -1,4 +1,4 @@
-# @vue/runtime-core
+# @vue/runtime-core MEDIMO EDIT
 
 > This package is published only for typing and building custom renderers. It is NOT meant to be used in applications.
 
@@ -26,3 +26,4 @@ export * from '@vue/runtime-core'
 ```
 
 See `@vue/runtime-dom` for how a DOM-targeting renderer is implemented.
+# vue3-production-debug-runtime-core
